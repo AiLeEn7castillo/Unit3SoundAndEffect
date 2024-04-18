@@ -242,6 +242,8 @@ MonoBehaviour:
   gravityModifier: 1.5
   isOnGround: 1
   gameOver: 0
+  doubleJumpUsed: 0
+  doubleJumpForce: 400
 --- !u!65 &409034783
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -307,7 +309,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -804,6 +806,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 882e87ba7c26a9d47a4f001002357e94, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 882e87ba7c26a9d47a4f001002357e94, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.51
@@ -911,7 +917,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52807293963258444acad482a11b1b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefab: {fileID: 8249226030653632298, guid: e1e82610b11afb54f9c2af87e1809b37, type: 3}
+  obstaclePrefabs:
+  - {fileID: 8249226030653632298, guid: e1e82610b11afb54f9c2af87e1809b37, type: 3}
+  - {fileID: 7978387444901080848, guid: 0296c9757de10e043805ab1c70480708, type: 3}
+  - {fileID: 5598284323008898700, guid: d2495479f0e5fbd45952ece2533a8ebe, type: 3}
+  - {fileID: 177666737517724021, guid: e80319139effe8740aac64b5e6b85c07, type: 3}
 --- !u!1001 &1637859367
 PrefabInstance:
   m_ObjectHideFlags: 0
