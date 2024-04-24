@@ -10,13 +10,12 @@ public class SpawnManagerX : MonoBehaviour
     private float repeatRate = 2f;
     private PlayerControllerX playerControllerScript;
     private int randomObstacles;
-
-    private PlayerControllerX playerControllerScript;
+    private float spawnInterval = 1.5f;
 
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("PrawnsObject", spawnDelay, spawnInterval);
+        InvokeRepeating("SpawnObjects", spawnDelay, spawnInterval);
         playerControllerScript = GameObject.Find("Player").GetComponent<PlayerControllerX>();
     }
 

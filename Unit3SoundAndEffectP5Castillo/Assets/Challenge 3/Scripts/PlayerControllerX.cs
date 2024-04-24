@@ -1,6 +1,7 @@
 ﻿using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerControllerX : MonoBehaviour
@@ -38,9 +39,14 @@ public class PlayerControllerX : MonoBehaviour
     void Update()
     {
         // While space is pressed and player is low enough, float up
-        if (Input.GetKey(KeyCode.Space) && !gameOver)
+        if (Input.GetKey(KeyCode.Space) && !gameOver && transform.position.y < 15)
         {
-            playerRb.AddForce(Vector3.up * floatForce * Time.deltaTime, ForceMode.Impulse);
+            playerRb.AddForce(Vector3.up * floatForce);
+        }
+        else if (transform.position.y >= 15)
+        {
+            //Dont go up anymore
+            transform.position = new Vector3(4, 15, 0);
         }
     }
 
